@@ -4,7 +4,7 @@
   "description": "API REST para Catálogo de Cursos com NestJS",
   "main": "dist/main.js",
   "scripts": {
-    "build": "nest build",
+    "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
