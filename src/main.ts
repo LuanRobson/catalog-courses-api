@@ -6,6 +6,15 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Log das variáveis de ambiente (apenas em desenvolvimento)
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('🔍 Variáveis de ambiente:');
+    console.log('DATABASE_URL:', process.env.DATABASE_URL ? '✅ Configurada' : '❌ Não configurada');
+    console.log('DIRECT_URL:', process.env.DIRECT_URL ? '✅ Configurada' : '❌ Não configurada');
+    console.log('JWT_SECRET:', process.env.JWT_SECRET ? '✅ Configurada' : '❌ Não configurada');
+    console.log('NODE_ENV:', process.env.NODE_ENV || 'development');
+  }
+
   // Configuração do CORS
   app.enableCors({
     origin: process.env.CORS_ORIGIN || 'http://localhost:4200',
