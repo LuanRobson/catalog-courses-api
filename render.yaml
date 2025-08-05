@@ -9,4 +9,14 @@ services:
         value: production
       - key: PORT
         value: 10000
+      - key: DATABASE_URL
+        sync: false
+      - key: DIRECT_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: "7d"
+      - key: CORS_ORIGIN
+        sync: false
     healthCheckPath: /api/v1/categories 
